@@ -28,3 +28,9 @@ WASD حركة · Shift مشي هادي · Space قفز · ضغط يسار إطل
 
 ## الجرافيك
 الخامات مولّدة بالكود. لاستبدالها بصور Higgsfield شوف `assets/PROMPTS.md`.
+
+## النشر (GitHub + Vercel)
+Vercel بيستضيف الموقع (الملفات الثابتة) بس، لكن **مش بيشغّل سيرفر WebSocket** اللي اللعبة محتاجاه. فالنشر على خطوتين:
+1. **السيرفر** (`npm start`) على استضافة بتدعم Node دايم التشغيل + WebSocket: Render أو Railway أو Fly.io (Build: `npm install`، Start: `npm start`). هتاخد رابط زي `https://sahraa.onrender.com`.
+2. **الموقع** على Vercel: ارفع المشروع على GitHub، استورده في Vercel (الإعدادات جاهزة في `vercel.json`)، وضيف متغير بيئة `SERVER_URL=wss://sahraa.onrender.com`. أو عدّل `client/config.js` بنفس القيمة.
+لو عايز أسهل: انشر كل حاجة على Render لوحده (السيرفر بيقدّم الموقع كمان) وسيب `SERVER_URL` فاضي.

@@ -70,7 +70,7 @@ function connect(first) {
   store.set('name', $('nameInput').value.trim());
   $('loading').classList.remove('hidden');
   const proto = location.protocol === 'https:' ? 'wss' : 'ws';
-  const ws = new WebSocket(`${proto}://${location.host}`);
+  const ws = new WebSocket(window.SERVER_URL || `${proto}://${location.host}`);
   S.ws = ws;
   ws.onopen = () => send({ ...first, name });
   ws.onmessage = (e) => { let m; try { m = JSON.parse(e.data); } catch { return; } onMsg(m); };
