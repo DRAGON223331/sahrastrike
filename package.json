@@ -1,0 +1,15 @@
+{
+  "name": "sahraa-strike",
+  "version": "0.1.0",
+  "description": "صحراء سترايك - لعبة تكتيكية 5 ضد 5 على المتصفح بطابع صحراوي عربي",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node test/sim.js"
+  },
+  "dependencies": {
+    "three": "^0.186.1",
+    "ws": "^8.22.0"
+  }
+}
